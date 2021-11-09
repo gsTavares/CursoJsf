@@ -32,6 +32,26 @@ public class EstudanteRegistrarBean implements Serializable {
         nomesMap.put("One piece", "O mais longo");
         nomesMap.put("Naruto", "O com mais lenga lenga");
     }
+    
+    public void executar(){
+        System.out.println("Fazendo uma busca no banco de dados...");
+        System.out.println("Processando os dados...");
+        System.out.println("Exibindo os dados...");
+    }
+    
+    public void executar(String param){
+        System.out.println("Fazendo uma busca no banco de dados com o PARAMÊTRO: "+param+"...");
+        System.out.println("Processando os dados com o PARÂMETRO: "+param+"...");
+        System.out.println("Exibindo os dados com o PARÂMETRO: "+param+"...");
+    }
+    
+    public String executarRetorno(String param){
+        return "Quem é eh o lindão? "+param;
+    }
+    
+    public String irParaIndex2(){
+        return "index2?faces-redirect=true";
+    }
 
     public Map<String, String> getNomesMap() {
         return nomesMap;

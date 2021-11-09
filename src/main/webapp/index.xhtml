@@ -33,7 +33,7 @@
 
         <h:outputText value="ENUM"/> <br /> 
         <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno.equals(Turno.MATUTINO)}"/> <br />
-        
+
         <!-- Arrays -->
         <h:outputLabel value="#{estudanteRegistrarBean.nomesArray[0]} #{estudanteRegistrarBean.nomesArray[1]}
                        #{estudanteRegistrarBean.nomesArray[2]}"/> <br/>
@@ -41,7 +41,7 @@
         <ui:repeat value="#{estudanteRegistrarBean.nomesArray}" var="nome">
             <h:outputLabel value="#{nome}"/><br/>
         </ui:repeat>
-        
+
         <!-- List -->
         <h:outputLabel value="#{estudanteRegistrarBean.nomesList.get(0)} #{estudanteRegistrarBean.nomesList.get(1)}
                        #{estudanteRegistrarBean.nomesList.get(2)}"/> <br/>
@@ -49,23 +49,34 @@
         <ui:repeat value="#{estudanteRegistrarBean.nomesList}" var="nome">
             <h:outputLabel value="#{nome}"/><br/>
         </ui:repeat>
-        
+
         <!-- ui:repeat SET -->
         <h:outputLabel value="---------- SET -----------"/> <br/>
         <ui:repeat value="#{estudanteRegistrarBean.nomesSet.toArray()}" var="nome">
             <h:outputLabel value="#{nome}"/> <br/>
         </ui:repeat>
-        
+
         <!-- MAP -->
         <h:outputLabel value="---------- MAP -----------"/> <br/>
         <h:outputLabel value="#{estudanteRegistrarBean.nomesMap.get('Goku')}"/> <br/>
-        
+
         <!-- ui:repeat MAP -->
         <h:outputLabel value="---------- MAP -----------"/> <br/>
         <ui:repeat value="#{estudanteRegistrarBean.nomesMap.entrySet().toArray()}" var="entry"> <br/>
             <h:outputLabel value="#{entry.key} - #{entry.value}"/> <br/>
         </ui:repeat>
-        
+
+        #{estudanteRegistrarBean.executar()}
+        #{estudanteRegistrarBean.executar('xuxu beleza')}
+        #{estudanteRegistrarBean.executar(estudanteRegistrarBean.estudante.nome)}
+        #{estudanteRegistrarBean.executarRetorno(estudanteRegistrarBean.estudante.nome)} <br/> <br/>
+
+        <h:form>
+            <h:commandButton value="Ir para próxima página"
+                             action="#{estudanteRegistrarBean.irParaIndex2()}"/>
+        </h:form>
+
+
     </h:body>
 </html>
 
