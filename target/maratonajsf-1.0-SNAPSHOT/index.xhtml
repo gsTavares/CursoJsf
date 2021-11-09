@@ -75,6 +75,8 @@
         <h:form>
             <h:commandButton value="Ir para próxima página"
                              action="#{estudanteRegistrarBean.irParaIndex2()}"/> <br/> 
+
+            <!-- JS com EL -->
             <h:commandButton value="Soltar magia" onclick="fazMagica('Hadouken')"/> <br/>
             <h:commandButton value="Nome" onclick="alertNome('#{estudanteRegistrarBean.estudante.nome}')"/>
         </h:form>
@@ -83,19 +85,55 @@
             #{status.index} - 
             <h:outputLabel value="#{nome}" style="color: #{status.index mod 2 == 0 ? 'red' : 'green'}"/><br/>
         </ui:repeat>
+        <br/>
+
+        <h:form id="form">
+            <h:commandButton value="Exibir notas">
+                <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.exibirNotas()}"></f:ajax>
+            </h:commandButton> 
+
+            <h:commandButton value="Esconder notas">
+                <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.esconderNotas()}"></f:ajax>
+            </h:commandButton> <br/>
+
+            <h:panelGrid id="notasGrid">
+                <h:outputText value="#{estudanteRegistrarBean.estudante.nome}"/> 
+                <h:outputText value="#{estudanteRegistrarBean.estudante.sobrenome}"/> 
+                <h:outputText value="#{estudanteRegistrarBean.estudante.turno}"/> 
+                <h:outputText value="#{estudanteRegistrarBean.estudante.nota1}" 
+                              rendered="${estudanteRegistrarBean.mostrarNotas}"/>
+                <h:outputText value="#{estudanteRegistrarBean.estudante.nota2}" 
+                              rendered="${estudanteRegistrarBean.mostrarNotas}"/>
+                <h:outputText value="#{estudanteRegistrarBean.estudante.nota3}" 
+                              rendered="${estudanteRegistrarBean.mostrarNotas}"/>
+            </h:panelGrid> <br/>
 
 
+            <h:commandButton value="Exibir link">
+                <f:ajax render="pgLink" listener="#{estudanteRegistrarBean.exibirLink()}"></f:ajax>
+            </h:commandButton> 
+
+            <h:commandButton value="Esconder link">
+                <f:ajax render="pgLink" listener="#{estudanteRegistrarBean.esconderLink()}"></f:ajax>
+            </h:commandButton> <br/>
+
+            <h:panelGroup id="pgLink">
+                <ui:fragment id="fragmentLink" rendered="#{estudanteRegistrarBean.mostrarLink}">
+                    <a href="http://www.google.com.br" target="_blank">www.google.com.br</a> 
+                </ui:fragment>
+            </h:panelGroup>
 
 
+        </h:form>
     </h:body>
 
     <script type="text/javascript">
-        function fazMagica(magica){
+        function fazMagica(magica) {
             alert(magica);
         }
-        
-        function alertNome(nome){
-            alert(nome)
+
+        function alertNome(nome) {
+            alert(nome);
         }
     </script>
 </html>
