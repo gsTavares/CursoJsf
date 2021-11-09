@@ -8,10 +8,26 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <f:view>
-            <h:outputLabel value="Hello World"/> <br/>
-            <h:outputLabel value="#{estudanteRegistrarBean.nome}"/>
-        </f:view>
+
+        <h:outputLabel value="Hello World"/> <br />
+        <h:outputLabel value="#{estudanteRegistrarBean.nome}"/> <br />
+        <h:outputLabel value="#{estudanteRegistrarBean.sobrenome}"/> <br />            
+        <h:outputLabel value="#{estudanteRegistrarBean.nota1 eq estudanteRegistrarBean.nota2}"/> <br />            
+        <h:outputLabel value="#{estudanteRegistrarBean.nota1 == estudanteRegistrarBean.nota2}"/> <br />            
+        <h:outputLabel value="#{estudanteRegistrarBean.nota1 eq estudanteRegistrarBean.nota2 and
+                                estudanteRegistrarBean.nome.equals('Gustavo')}"/> <br />
+        
+        <h:outputText value="Comparação notas"/> <br /> 
+        <h:outputLabel value="#{estudanteRegistrarBean.nota1 le estudanteRegistrarBean.nota2}"/> <br />  
+        <h:outputLabel value="#{estudanteRegistrarBean.nota1 eq 0 ? 'ZERO' : 'NÃO ZERO'}"/> <br />  
+        <h:outputLabel value="#{estudanteRegistrarBean.nota1 = 30}"/> <br />  
+        <h:outputLabel value="#{estudanteRegistrarBean.nota1}"/> <br />  
+        <h:outputLabel value="#{estudanteRegistrarBean.nome += ' sobrenomeTeste'}"/> <br />  
+        <h:outputLabel value="#{estudanteRegistrarBean.nome}"/> <br />
+        
+        <!-- Palavras reservadas: and, or, not, eq, ne, lg, gt, le, ge, true, false, null, 
+        instanceof, empty, not empty, div e mod -->
+
     </h:body>
 </html>
 

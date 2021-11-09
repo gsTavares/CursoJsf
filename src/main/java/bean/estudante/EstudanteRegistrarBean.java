@@ -19,7 +19,7 @@ public class EstudanteRegistrarBean implements Serializable {
 
     private String nome = "Gustavo";
     private String sobrenome = "Tavares";
-    private double nota1;
+    private double nota1 = 20;
     private double nota2;
     private double nota3 = 10;
 
