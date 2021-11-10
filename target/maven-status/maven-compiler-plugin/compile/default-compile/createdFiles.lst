@@ -1,5 +1,5 @@
 com\aulas\maratonajsf\model\enums\Turno.class
 com\aulas\maratonajsf\resources\JavaEE8Resource.class
-com\aulas\maratonajsf\model\Estudante.class
 com\aulas\maratonajsf\JAXRSConfiguration.class
+com\aulas\maratonajsf\model\Estudante.class
 com\aulas\maratonajsf\bean\estudante\EstudanteRegistrarBean.class
