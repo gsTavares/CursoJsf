@@ -27,4 +27,8 @@
     <welcome-file-list>
         <welcome-file>faces/request.xhtml</welcome-file>
     </welcome-file-list>
+    
+    <error-page>
+        <location>/error.xhtml</location>
+    </error-page>
 </web-app>
