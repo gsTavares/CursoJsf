@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
@@ -25,8 +26,14 @@ import javax.inject.Named;
 
 public class TesteRequestBean implements Serializable {
 
-    private List<String> personagens = Arrays.asList("Yusuke", "Hiei", "Kurama");
+    private List<String> personagens;
     private List<String> personagemSelecionado = new ArrayList<>();
+    
+    @PostConstruct // Realizar o método abaixo após os atributos e construtores forem criados
+    public void init(){
+        System.out.println("Entrou no PostConstruct do RequestScoped");
+        personagens = Arrays.asList("Yusuke", "Hiei", "Kurama");
+    }
     
     public void selecionarPersonagem(){
         int index = ThreadLocalRandom.current().nextInt(3); // Gera um número aleatório de 0 a 3
