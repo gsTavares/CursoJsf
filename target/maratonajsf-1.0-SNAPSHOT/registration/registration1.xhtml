@@ -6,17 +6,19 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
+        <h:messages/>
         <h:form>
             <h2>Primeira página de registro FlowScoped</h2>
 
             <h:panelGrid columns="2">
                 <h:outputLabel value="Nome"/>
-                <h:inputText value="#{testeFlowBean.nome}"/>
+                <h:inputText value="#{testeFlowBean.nome}" required="true"
+                             requiredMessage="Campo Obrigatório"/>
                 <h:outputLabel value="Sobrenome"/>
                 <h:inputText value="#{testeFlowBean.sobrenome}"/>
             </h:panelGrid>
             
-            <h:commandButton value="Next" action="registration2?faces-redirect=true"/>
+            <h:commandButton value="Next" action="registrationPage2"/>
         </h:form>
 
     </h:body>
