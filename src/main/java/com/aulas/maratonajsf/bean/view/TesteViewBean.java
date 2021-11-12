@@ -4,6 +4,7 @@
  */
 package com.aulas.maratonajsf.bean.view;
 
+import com.aulas.maratonajsf.bean.dependent.TesteDependentBean;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,6 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -25,6 +27,15 @@ import javax.inject.Named;
 public class TesteViewBean implements Serializable {
     private List<String> personagens;
     private List<String> personagemSelecionado = new ArrayList<>();
+    // Injeção do @Dependent
+    private final TesteDependentBean dependentBean;
+    
+    @Inject
+    public TesteViewBean(TesteDependentBean dependentBean) {
+        this.dependentBean = dependentBean;
+    }
+    
+    
     
     @PostConstruct // Realizar o método abaixo após os atributos e construtores forem criados
     public void init(){
@@ -36,8 +47,13 @@ public class TesteViewBean implements Serializable {
         int index = ThreadLocalRandom.current().nextInt(3); // Gera um número aleatório de 0 a 3
         String personagem = personagens.get(index);
         personagemSelecionado.add(personagem);
+        dependentBean.getPersonagemSelecionado().add(personagem);
     }
 
+    public TesteDependentBean getDependentBean() {
+        return dependentBean;
+    }
+    
     public List<String> getPersonagemSelecionado() {
         return personagemSelecionado;
     }
