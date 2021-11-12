@@ -9,6 +9,7 @@ com\aulas\maratonajsf\bean\estudante\EstudanteRegistrarBean.class
 com\aulas\maratonajsf\model\enums\Turno.class
 com\aulas\maratonajsf\model\Estudante.class
 com\aulas\maratonajsf\bean\session\TesteSessionBean.class
+com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste10Bean.class
 com\aulas\maratonajsf\bean\login\LoginBean.class
 com\aulas\maratonajsf\JAXRSConfiguration.class
 com\aulas\maratonajsf\bean\dependent\TesteDependentBean.class

@@ -32,9 +32,9 @@ public class Estudante {
     }
 
     public static List<Estudante> estudanteList() {
-        return Arrays.asList(new Estudante("Ikki", "Fenix", 10),
+        return new ArrayList<>(Arrays.asList(new Estudante("Ikki", "Fenix", 10),
                 new Estudante("Shiryu", "Dragao", 10),
-                new Estudante("Seya", "Pegasus", 10));
+                new Estudante("Seya", "Pegasus", 10))); 
     }
 
     public Turno getTurno() {
