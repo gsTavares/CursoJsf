@@ -5,18 +5,37 @@
 package com.aulas.maratonajsf.model;
 
 import com.aulas.maratonajsf.model.enums.Turno;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
  * @author Marketing
  */
 public class Estudante {
+
     private String nome = "Gustavo";
     private String sobrenome = "Tavares";
     private double nota1 = 20;
     private double nota2;
     private double nota3 = 10;
     private Turno turno = Turno.MATUTINO;
+
+    public Estudante() {
+    }
+
+    public Estudante(String nome, String sobrenome, double nota1) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.nota1 = nota1;
+    }
+
+    public static List<Estudante> estudanteList() {
+        return Arrays.asList(new Estudante("Ikki", "Fenix", 10),
+                new Estudante("Shiryu", "Dragao", 10),
+                new Estudante("Seya", "Pegasus", 10));
+    }
 
     public Turno getTurno() {
         return turno;
@@ -25,7 +44,7 @@ public class Estudante {
     public void setTurno(Turno turno) {
         this.turno = turno;
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -65,6 +84,5 @@ public class Estudante {
     public void setNota3(double nota3) {
         this.nota3 = nota3;
     }
-    
-    
+
 }
