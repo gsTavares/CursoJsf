@@ -2,26 +2,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:oou="http://omnifaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
-    
+
     <f:metadata>
         <f:viewParam name="nome" value="#{comunicacaoTeste3Bean.nome}"/>
         <f:viewParam name="sobrenome" value="#{comunicacaoTeste3Bean.sobrenome}"/>
-        <f:event type="preRenderView" listener="#{comunicacaoTeste3Bean.init}"/>
+        <!--<f:event type="preRenderView" listener="#{comunicacaoTeste3Bean.init}"/>-->
+        <f:viewAction action="#{comunicacaoTeste3Bean.init}"/>
     </f:metadata>
-    
+
     <h:body>
-        <h:form>
+        <p:messages autoUpdate="true"/>
+        <oou:form includeRequestParams="true">
             <h:panelGrid columns="1">
-                <h:inputText value="#{comunicacaoTeste3Bean.nome}"/>
+                <h:inputText value="#{comunicacaoTeste3Bean.nome}" required="true"
+                             requiredMessage="O nome é obrigatório">
+                <f:ajax event="blur"/>
+                </h:inputText>
                 <h:inputText value="#{comunicacaoTeste3Bean.sobrenome}"/>
-                
+
                 <h:commandButton value="resultado" action="#{comunicacaoTeste3Bean.save()}"/>
             </h:panelGrid>  
-        </h:form>
+        </oou:form>
     </h:body>
 </html>
 
