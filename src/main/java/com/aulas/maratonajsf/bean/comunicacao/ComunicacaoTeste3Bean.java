@@ -5,6 +5,9 @@
 package com.aulas.maratonajsf.bean.comunicacao;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -19,11 +22,14 @@ import javax.inject.Named;
 public class ComunicacaoTeste3Bean implements Serializable{
     private String nome;
     private String sobrenome;
+    private Date data;
     
-    public void init(){
+    
+    public void init() throws ParseException{
         System.out.println("Criou comunicação 3");
         System.out.println(nome);
         System.out.println(sobrenome);
+        
     }
     
     
@@ -31,6 +37,18 @@ public class ComunicacaoTeste3Bean implements Serializable{
         System.out.println("Salvando...");
         return "resultado?faces-redirect=true&amp;includeViewParams=true";
     }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    
+    
+    
     
     public String getNome() {
         return nome;

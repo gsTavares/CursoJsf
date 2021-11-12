@@ -5,6 +5,9 @@
 package com.aulas.maratonajsf.bean.comunicacao;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -18,6 +21,7 @@ import javax.inject.Named;
 public class ComunicacaoTeste1Bean implements Serializable{
     private String nome;
     private String sobrenome;
+    private Date data = new Date();
     
     public void imprimirAtributos(){
         String initParameter = FacesContext.getCurrentInstance()
@@ -34,6 +38,15 @@ public class ComunicacaoTeste1Bean implements Serializable{
         return "comunicacao2?faces-redirect=true&nome="+nome+"&sobrenome="+sobrenome;
     }
     
+    
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
     
     public String getNome() {
         return nome;
