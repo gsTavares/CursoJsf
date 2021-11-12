@@ -33,6 +33,11 @@
         <url-pattern>/faces/restricted/*</url-pattern>
     </filter-mapping>
     
+    <context-param>
+        <param-name>images.location</param-name>
+        <param-value>C:\var</param-value>
+    </context-param>
+    
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
