@@ -5,6 +5,7 @@
 package com.aulas.maratonajsf.bean.view;
 
 import com.aulas.maratonajsf.bean.dependent.TesteDependentBean;
+import com.aulas.maratonajsf.bean.session.TesteSessionBean;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,10 +30,12 @@ public class TesteViewBean implements Serializable {
     private List<String> personagemSelecionado = new ArrayList<>();
     // Injeção do @Dependent
     private final TesteDependentBean dependentBean;
+    private final TesteSessionBean sessionBean;
     
     @Inject
-    public TesteViewBean(TesteDependentBean dependentBean) {
+    public TesteViewBean(TesteDependentBean dependentBean, TesteSessionBean sessionBean) {
         this.dependentBean = dependentBean;
+        this.sessionBean = sessionBean;
     }
     
     
@@ -48,6 +51,10 @@ public class TesteViewBean implements Serializable {
         String personagem = personagens.get(index);
         personagemSelecionado.add(personagem);
         dependentBean.getPersonagemSelecionado().add(personagem);
+    }
+
+    public TesteSessionBean getSessionBean() {
+        return sessionBean;
     }
 
     public TesteDependentBean getDependentBean() {
