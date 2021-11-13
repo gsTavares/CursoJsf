@@ -21,6 +21,7 @@ public class Estudante {
     private double nota2;
     private double nota3 = 10;
     private Turno turno = Turno.MATUTINO;
+    private String email;
 
     public Estudante() {
     }
@@ -37,6 +38,14 @@ public class Estudante {
                 new Estudante("Seya", "Pegasus", 10))); 
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public Turno getTurno() {
         return turno;
     }
