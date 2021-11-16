@@ -55,6 +55,16 @@
     </context-param>
     
     <context-param>
+        <param-name>com.sun.faces.enableRestoreView11Compatibility</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <error-page>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/faces/expirederror.xhtml</location>
+    </error-page>
+    
+<!--    <context-param>
         <param-name>com.sun.faces.numberOfLogicalViews</param-name>
         <param-value>2</param-value>
     </context-param>
@@ -62,7 +72,7 @@
     <context-param>
         <param-name>com.sun.faces.numberOfViewsInSession</param-name>
         <param-value>4</param-value>
-    </context-param>
+    </context-param>-->
     
 <!--    <context-param>
         <param-name>javax.pages.PARTIAL_STATE_SAVING/param-name>
