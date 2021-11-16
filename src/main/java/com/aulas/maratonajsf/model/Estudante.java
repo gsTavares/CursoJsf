@@ -24,6 +24,7 @@ public class Estudante implements Serializable{
     private double nota3 = 10;
     private Turno turno = Turno.MATUTINO;
     private String email;
+    private transient boolean editing;
 
     public Estudante() {
     }
@@ -72,9 +73,22 @@ public class Estudante implements Serializable{
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Estudante{" + "nome=" + nome + ", sobrenome=" + sobrenome + ", turno=" + turno + ", email=" + email + '}';
+    }
     
     
 
+    public boolean isEditing() {
+        return editing;
+    }
+
+    public void setEditing(boolean editing) {
+        this.editing = editing;
+    }
+    
     public Integer getId() {
         return id;
     }

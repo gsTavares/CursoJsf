@@ -23,35 +23,54 @@ import javax.inject.Named;
 @Named
 @ViewScoped
 
-public class DataTableTesteBean implements Serializable{
+public class DataTableTesteBean implements Serializable {
+
     private List<Estudante> estudanteList = Estudante.estudanteList();
-    private Set<Estudante> estudanteSet = new HashSet<>(Estudante.estudanteList()); 
+    private Set<Estudante> estudanteSet = new HashSet<>(Estudante.estudanteList());
     private List<Estudante> estudanteLinkedList = new LinkedList<>(Estudante.estudanteList());
     private Map<String, Estudante> mapEstudanteList = new HashMap<>();
-    
-    public void init(){
+
+    public void init() {
         mapEstudanteList.put("Estudante 1", new Estudante(1, "Ikki", "Fenix", 10));
         mapEstudanteList.put("Estudante 2", new Estudante(2, "Shiryu", "Dragão", 10));
         mapEstudanteList.put("Estudante 3", new Estudante(3, "Seya", "Pegasus", 10));
     }
-    
-    public void orderByNome(String ordem){
-        if(ordem.equals("asc")){
+
+    public void orderByNome(String ordem) {
+        if (ordem.equals("asc")) {
             estudanteList.sort(Comparator.comparing(Estudante::getNome));
         } else {
             estudanteList.sort(Comparator.comparing(Estudante::getNome).reversed());
         }
     }
-    
-    public void orderBySobrenome(String ordem){
-        if(ordem.equals("asc")){
+
+    public void orderBySobrenome(String ordem) {
+        if (ordem.equals("asc")) {
             estudanteList.sort(Comparator.comparing(Estudante::getSobrenome));
         } else {
             estudanteList.sort(Comparator.comparing(Estudante::getSobrenome).reversed());
         }
     }
-    
-    
+
+    public void remove(Estudante estudante) {
+        // Faz uma chamada para o banco de dados
+        estudanteList.remove(estudante);
+    }
+
+    public void edit(Estudante estudante) {
+        estudante.setEditing(true);
+    }
+
+    public void save() {
+        estudanteList.forEach(estudante -> {
+            if (estudante.isEditing()) {
+                System.out.println(estudante);
+            }
+            estudante.setEditing(false);
+        }
+        );
+    }
+
     public List<Estudante> getEstudanteList() {
         return estudanteList;
     }
@@ -83,8 +102,5 @@ public class DataTableTesteBean implements Serializable{
     public void setMapEstudanteList(Map<String, Estudante> mapEstudanteList) {
         this.mapEstudanteList = mapEstudanteList;
     }
-    
-    
-    
-    
+
 }
