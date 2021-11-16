@@ -19,12 +19,30 @@
                 <h:inputText value="#{ajaxTesteBean.sobrenome}" id="sobrenome"/>
 
                 <h:commandButton value="Enviar">
-                    <f:ajax execute="@form" listener="#{ajaxTesteBean.toUppercase()}" 
+                    <f:ajax event="click" execute="@form" listener="#{ajaxTesteBean.toUppercase()}" 
                             render="@form form2-sobrenomeOut2"/>
                 </h:commandButton>
 
                 <h:outputText value="#{ajaxTesteBean.nome}" id="nomeOut"/>
                 <h:outputText value="#{ajaxTesteBean.sobrenome}" id="sobrenomeOut"/>
+
+                <h:inputText value="#{ajaxTesteBean.nome}">
+                    <f:ajax event="blur" listener="#{ajaxTesteBean.toUppercaseNome()}" 
+                            render="@this nomeOut"/>
+                </h:inputText>
+
+                <h:selectOneMenu value="#{ajaxTesteBean.animeSelecionado}">
+                    <f:selectItem value="#{null}" itemLabel="Selecione um anime..."/>
+                    <f:selectItems value="#{ajaxTesteBean.animePersonagensMap.keySet()}"
+                                   var="anime" itemLabel="#{anime}" itemValue="#{anime}"/>
+                    <f:ajax event="change" listener="#{ajaxTesteBean.onSelectAnime}" render="personagem"/>
+                </h:selectOneMenu>
+
+                <h:selectOneMenu id="personagem" value="#{ajaxTesteBean.personagemSelecionado}">
+                    <f:selectItem value="#{null}" itemLabel="Selecione um personagem..."/>
+                    <f:selectItems value="#{ajaxTesteBean.personagens}"
+                                   var="personagem" itemLabel="#{personagem}" itemValue="#{personagem}"/>
+                </h:selectOneMenu>
             </h:panelGrid> 
         </h:form>
 
