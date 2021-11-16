@@ -9,9 +9,14 @@
     </h:head>
     <h:body>
         <p:messages autoUpdate="true" id="messages"/>
+        <f:event type="preRenderView" listener="#{ajaxTesteBean.init()}"/>
+        <f:metadata>
+            <f:viewAction action="#{ajaxTesteBean.init}"/>
+        </f:metadata>
+        <h:outputText value="é uma requisição ajax? #{facesContext.postback}" id="postback"/> 
         <h:form id="form">
             <h:panelGrid columns="1">
-                <f:ajax event="blur" render="messages">
+                <f:ajax event="blur" render="postback">
                     <h:inputText value="#{ajaxTesteBean.email}" id="email" validator="#{validators.validateDuplicatedEmail}" required="true"/>
                     <h:inputText value="#{ajaxTesteBean.nome}" id="nome" required="true"/>
                 </f:ajax>

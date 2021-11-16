@@ -20,7 +20,8 @@ import javax.inject.Named;
 @Named
 @ViewScoped
 
-public class AjaxTesteBean implements Serializable{
+public class AjaxTesteBean implements Serializable {
+
     private String nome;
     private String sobrenome;
     private String email;
@@ -28,7 +29,14 @@ public class AjaxTesteBean implements Serializable{
     private List<String> personagens;
     private String animeSelecionado;
     private String personagemSelecionado;
-    {
+//    {
+//        animePersonagensMap = new TreeMap<>();
+//        animePersonagensMap.put("Hellsing", Arrays.asList("Alucard", "Seras", "Alexander"));
+//        animePersonagensMap.put("Attack on Titan", Arrays.asList("Eren", "Mikasa", "Armin"));
+//        animePersonagensMap.put("Berserk", Arrays.asList("Guts", "Casca", "Griffith"));
+//    }
+
+    public void init() {
         animePersonagensMap = new TreeMap<>();
         animePersonagensMap.put("Hellsing", Arrays.asList("Alucard", "Seras", "Alexander"));
         animePersonagensMap.put("Attack on Titan", Arrays.asList("Eren", "Mikasa", "Armin"));
@@ -42,7 +50,7 @@ public class AjaxTesteBean implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     public Map<String, List<String>> getAnimePersonagensMap() {
         return animePersonagensMap;
     }
@@ -90,21 +98,21 @@ public class AjaxTesteBean implements Serializable{
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
     }
-    
-    public void onSelectAnime(){
-        if(animeSelecionado == null){
+
+    public void onSelectAnime() {
+        if (animeSelecionado == null) {
             personagens = null;
             return;
         }
         personagens = animePersonagensMap.get(animeSelecionado);
     }
-    
-    public void toUppercase(AjaxBehaviorEvent event){
+
+    public void toUppercase(AjaxBehaviorEvent event) {
         this.nome = this.nome.toUpperCase();
         this.sobrenome = this.sobrenome.toUpperCase();
     }
-    
-    public void toUppercaseNome(){
+
+    public void toUppercaseNome() {
         this.nome = this.nome.toUpperCase();
     }
 }
