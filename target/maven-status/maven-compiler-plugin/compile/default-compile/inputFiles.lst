@@ -1,14 +1,18 @@
+C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\validator\ValidatorTesteBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\model\Estudante.java
+C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\converter\ConverterTesteBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\estudante\EstudanteRegistrarBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste6Bean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\view\TesteViewBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste9Bean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste5Bean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste2Bean.java
+C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\validators\Validators.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\JAXRSConfiguration.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\flow\TesteFlowNestedBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\dependent\TesteDependentBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\session\TesteSessionBean.java
+C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\converters\EstudanteConverter.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste10Bean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\flow\TesteFlowBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste1Bean.java
@@ -18,6 +22,7 @@ C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\m
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\request\TesteRequestBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\util\ApplicationMapUtil.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste12Bean.java
+C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\validators\DuplicatedEmailValidator.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\application\TesteApplicationBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoResultadoTesteBean.java
 C:\Users\Marketing\Documents\NetBeansProjects\CursoJsf\src\main\java\com\aulas\maratonajsf\bean\comunicacao\ComunicacaoTeste11Bean.java

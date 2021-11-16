@@ -5,16 +5,18 @@
 package com.aulas.maratonajsf.model;
 
 import com.aulas.maratonajsf.model.enums.Turno;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
  * @author Marketing
  */
-public class Estudante {
-
+public class Estudante implements Serializable{
+    private Integer id;
     private String nome = "Gustavo";
     private String sobrenome = "Tavares";
     private double nota1 = 20;
@@ -31,13 +33,57 @@ public class Estudante {
         this.sobrenome = sobrenome;
         this.nota1 = nota1;
     }
-
-    public static List<Estudante> estudanteList() {
-        return new ArrayList<>(Arrays.asList(new Estudante("Ikki", "Fenix", 10),
-                new Estudante("Shiryu", "Dragao", 10),
-                new Estudante("Seya", "Pegasus", 10))); 
+    
+    public Estudante(Integer id, String nome, String sobrenome, double nota1) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.nota1 = nota1;
     }
 
+    public static List<Estudante> estudanteList() {
+        return new ArrayList<>(Arrays.asList(new Estudante(1, "Ikki", "Fenix", 10),
+                new Estudante(2, "Shiryu", "Dragao", 10),
+                new Estudante(3, "Seya", "Pegasus", 10))); 
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 89 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Estudante other = (Estudante) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
+    
+    
     public String getEmail() {
         return email;
     }
