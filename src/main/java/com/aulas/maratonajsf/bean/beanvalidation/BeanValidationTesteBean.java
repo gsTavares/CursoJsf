@@ -40,6 +40,9 @@ public class BeanValidationTesteBean implements Serializable {
 
     public void salvar() {
         System.out.println(nome);
+        System.out.println(email);
+        System.out.println(decimal);
+        System.out.println(numero);
     }
 
     public String getEmail() {

@@ -16,7 +16,7 @@
                 <h:inputText value="#{beanValidationTesteBean.email}" id="email"/>
                 <h:inputText value="#{beanValidationTesteBean.decimal}" id="decimal"/>
                 <h:inputText value="#{beanValidationTesteBean.numero}" id="numero"/>
-                <h:commandButton value="Enviar"/> 
+                <h:commandButton value="Enviar" actionListener="#{beanValidationTesteBean.salvar()}"/> 
             </h:panelGrid> 
         </h:form>
     </h:body>

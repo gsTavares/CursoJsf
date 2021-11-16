@@ -1,0 +1,28 @@
+// Ciclo de vida do JSF
+
+1 - (Nova requisição)
+
+2 - RESTORE VIEW --> Verifica se a requisição é nova
+ou se ela já existiu;
+
+Se a requisição é nova, ela vai direto pro método RENDER RESPONSE
+(Camada de apresentação do cliente);
+
+Se a requisição já existe, ela vai para o RESTORE VIEW e depois para
+o APPLY REQUEST VALUE (pega todos os valores do componente como request 
+parameter). Depois ela segue para o PROCESS VALIDATION (onde todas as
+validações são executadas);
+
+Se um parâmetro falha durante alguma validação, o PROCESS VALIDATION
+gera uma mensagem de erro e encaminha para o RENDER RESPONSE, que as
+imprime;
+
+Se não existe falha, a requisição passa para o UPDATE MODEL (seta todos
+os valores passados por parâmetro dentro do bean). Feito isso, o INVOKE
+APPLICATION realiza a submissão do formulário;
+
+ActionListener --> retorna void, ou seja, a RENDER RESPONSE atualiza
+a árvore de componentes dentro da mesma view e o processo não é reiniciado
+
+Action --> retorna String. Uma nova view é gerada e todo o processo começa
+novamente
