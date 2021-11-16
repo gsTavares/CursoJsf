@@ -18,13 +18,55 @@ import javax.inject.Named;
 @ViewScoped
 public class Html5TesteBean implements Serializable{
     private String email;
+    private String nome;
+    private String url;
+    private int number;
+    
     private Map<String, String> attributes = new HashMap<>();
     
     public void init(){
         attributes.put("type", "email");
         attributes.put("placeholder", "Digite o seu email...");
     }
+    
+    public void salvar(){
+        System.out.println(email);
+        System.out.println(url);
+        System.out.println(number);
+    }
+    
+    public void toUppercaseNome(){
+        this.nome = this.nome.toUpperCase();
+    }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+    
+    
+    
     public String getEmail() {
         return email;
     }
