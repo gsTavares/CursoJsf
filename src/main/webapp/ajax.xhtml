@@ -18,8 +18,9 @@
                 <h:inputText value="#{ajaxTesteBean.nome}" id="nome"/>
                 <h:inputText value="#{ajaxTesteBean.sobrenome}" id="sobrenome"/>
 
-                <h:commandButton value="Enviar" actionListener="#{ajaxTesteBean.toUppercase()}">
-                    <f:ajax execute="@form" render="@form form2-sobrenomeOut2"/>
+                <h:commandButton value="Enviar">
+                    <f:ajax execute="@form" listener="#{ajaxTesteBean.toUppercase()}" 
+                            render="@form form2-sobrenomeOut2"/>
                 </h:commandButton>
 
                 <h:outputText value="#{ajaxTesteBean.nome}" id="nomeOut"/>

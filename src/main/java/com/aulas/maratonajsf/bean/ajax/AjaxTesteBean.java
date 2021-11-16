@@ -5,6 +5,7 @@
 package com.aulas.maratonajsf.bean.ajax;
 
 import java.io.Serializable;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -33,6 +34,11 @@ public class AjaxTesteBean implements Serializable{
 
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
+    }
+    
+    public void toUppercase(AjaxBehaviorEvent event){
+        this.nome = this.nome.toUpperCase();
+        this.sobrenome = this.sobrenome.toUpperCase();
     }
     
     public void toUppercase(){
