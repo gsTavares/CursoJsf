@@ -13,7 +13,10 @@
         <h:form id="form">
             <h:panelGrid columns="1">
                 <h:inputText value="#{ajaxTesteBean.nome}" id="nome" required="true">
-                    <f:ajax event="keyup" listener="#{ajaxTesteBean.toUppercaseNome()}" render="nomeOut"/>
+                    <f:ajax event="keyup" 
+                            listener="#{ajaxTesteBean.toUppercaseNome()}" 
+                            render="nomeOut"
+                            delay="1000"/>
                 </h:inputText>
                 <h:outputText id="nomeOut" value="#{ajaxTesteBean.nome}"/>
                 <h:commandButton value="Enviar"/> 
