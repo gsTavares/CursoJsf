@@ -14,7 +14,9 @@
         <p:messages autoUpdate="true"/>
         <h:outputText value="Selecione um estudante"/> <br/>
         <h:form>
-            <h:selectOneMenu value="#{converterTesteBean.estudante}" converter="estudanteConverter">
+            <h:selectOneMenu value="#{converterTesteBean.estudante}" 
+                             converter="estudanteConverter" required="true" requiredMessage="Selecione um estudante">
+                <f:selectItem value="#{null}" itemLabel="Selecione um estudante..."/>
                 <f:selectItems value="#{converterTesteBean.estudanteList}"
                                var="estudante" itemLabel="#{estudante.nome}"
                                itemValue="#{estudante}"/>
