@@ -49,6 +49,22 @@
         <param-value>C:\var</param-value>
     </context-param>
     
+    <context-param>
+        <param-name>javax.pages.STATE_SAVING_METHOD</param-name>
+        <param-value>client</param-value>
+    </context-param>
+    
+<!--    <context-param>
+        <param-name>javax.pages.PARTIAL_STATE_SAVING/param-name>
+        <param-value>false</param-value>
+    </context-param>-->
+    
+    <env-entry>
+        <env-entry-name>jsf/ClientSideSecretKey</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>84nTfyGGbjXAThliN8SSFA==</env-entry-value>
+    </env-entry>
+    
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
