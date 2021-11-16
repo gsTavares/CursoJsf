@@ -7,18 +7,29 @@
         <title>Ajax</title>
     </h:head>
     <h:body>
-        <h:form>
+        <h:form id="form">
             <h:panelGrid columns="1">
+                <!-- 
+                @form (utiliza todos os componentes que existem dentro do formulário)
+                @this (se refere ao elemento que está efetuando a requisição ajax)
+                @none (não renderiza nada)
+                @all (todos os componentes da página)
+                -->
                 <h:inputText value="#{ajaxTesteBean.nome}" id="nome"/>
                 <h:inputText value="#{ajaxTesteBean.sobrenome}" id="sobrenome"/>
-                
+
                 <h:commandButton value="Enviar" actionListener="#{ajaxTesteBean.toUppercase()}">
-                    <f:ajax execute="nome sobrenome" render="nomeOut sobrenomeOut"/>
+                    <f:ajax execute="@form" render="@form form2-sobrenomeOut2"/>
                 </h:commandButton>
-                
+
                 <h:outputText value="#{ajaxTesteBean.nome}" id="nomeOut"/>
                 <h:outputText value="#{ajaxTesteBean.sobrenome}" id="sobrenomeOut"/>
             </h:panelGrid> 
+        </h:form>
+
+        <h:form id="form2">
+            <h:outputText value="#{ajaxTesteBean.nome}" id="nomeOut2"/>
+            <h:outputText value="#{ajaxTesteBean.sobrenome}" id="sobrenomeOut2"/>
         </h:form>
     </h:body>
 </html>
