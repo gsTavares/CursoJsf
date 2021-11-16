@@ -23,6 +23,7 @@ import javax.inject.Named;
 public class AjaxTesteBean implements Serializable{
     private String nome;
     private String sobrenome;
+    private String email;
     private Map<String, List<String>> animePersonagensMap;
     private List<String> personagens;
     private String animeSelecionado;
@@ -34,6 +35,14 @@ public class AjaxTesteBean implements Serializable{
         animePersonagensMap.put("Berserk", Arrays.asList("Guts", "Casca", "Griffith"));
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public Map<String, List<String>> getAnimePersonagensMap() {
         return animePersonagensMap;
     }
